@@ -22,7 +22,7 @@ Check out our [Project Board!!](https://github.com/where2moveus/where2moveus/pro
 
 ## Strategy to naming branches
 
-* *#_IssueNumber_-_Brief Description of task_*
+* *_IssueNumber_-_Brief Description of task_*
 
 ## APIs to be Used: 
 * GoogleMap API - Display map and pinpoint locations
