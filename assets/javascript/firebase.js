@@ -9,4 +9,8 @@ var config = {
   };
   firebase.initializeApp(config);
 
-  
+//Get elements
+const txtEmail = document.getElementById('txtEmail');
+const txtPassword = document.getElementById('txtPassword');
+const btnLogin = document.getElementById('btnLogin');
+const btnSignUp = document.getElementById('btnSignUp');
