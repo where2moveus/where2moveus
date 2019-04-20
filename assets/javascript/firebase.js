@@ -18,21 +18,19 @@ var config = {
     var verifyPassword = "";
 
 // Capture Button Click
-    $("#").on("click", function(event) {
+    $("#btnSubmit").on("click", function(event) {
       event.preventDefault();
 
 // Grabbed values from text-boxes
-      name = $("#name-input").val().trim();
-      email = $("#email-input").val().trim();
-      age = $("#age-input").val().trim();
-      comment = $("#comment-input").val().trim();
+      email = $("#signUpEmail").val().trim();
+      password = $("#signUpPW").val().trim();
+      verifyPassword = $("#verifyPW").val().trim();
 
 // Code for "Setting values in the database"
       database.ref().set({
-        name: name,
         email: email,
-        age: age,
-        comment: comment
+        password: password,
+        verifyPassword: verifyPassword
     });
 
 });
