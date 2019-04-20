@@ -9,9 +9,31 @@ var config = {
   };
   firebase.initializeApp(config);
 
-//Get elements
-const txtEmail = document.getElementById('txtEmail');
-const txtPassword = document.getElementById('txtPassword');
-const btnLogin = document.getElementById('btnLogin');
-const btnSignUp = document.getElementById('btnSignUp');
+// Variable to reference the database.
+    var database = firebase.database();
+
+// Initial Values
+    var email = "";
+    var password = "";
+    var verifyPassword = "";
+
+// Capture Button Click
+    $("#").on("click", function(event) {
+      event.preventDefault();
+
+// Grabbed values from text-boxes
+      name = $("#name-input").val().trim();
+      email = $("#email-input").val().trim();
+      age = $("#age-input").val().trim();
+      comment = $("#comment-input").val().trim();
+
+// Code for "Setting values in the database"
+      database.ref().set({
+        name: name,
+        email: email,
+        age: age,
+        comment: comment
+    });
+
+});
 
