@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
@@ -18,17 +21,33 @@
     <title>Where2MoveUS?</title>
 </head>
 
-<body>
+<body class="center-align">
+
+    <!--this is the navBar   -->
+
+        <nav class="indigo">
+            <nav>
+                <div class="nav-wrapper indigo">
+                  <a href="#" class="brand-logo"></a>
+                  <img src="./assets/images/logo.jpg" class="brand-logo"></img>
+                  <ul id="nav-mobile" class="left hide-on-med-and-down center-align">
+                  </ul>
+                </div>
+            </nav>
+        </nav>
+
 
     <!--Need to determine Layout for Website Name-->
         <h1>Where 2 Move US?</h1>
-    <div class=logIn>
-        <form>
-            <!--Needs CSS Styling - This is just the skeleton to get started-->
-            <input type="text" name="logIn" value="Email" id="txtEmail">
+
+    <div>
+        <!--Login Field-->
+        <form class="logIn center-align">
+            <input type="text" name="logIn" placeholder="Email" class="center-align" id="txtEmail">
             <br>
-            <input type="text" name="passWord" value="Password" id="txtPassWord">
-            <button class="btn waves-effect waves-light" type="submit" id="btnLogin" name="action">Log In
+        <!--Password Field-->
+            <input type="text" name="passWord" placeholder="Password" class="center-align" id="txtPassWord">
+            <button class="btn waves-effect waves-light indigo" type="submit" id="btnLogin" name="action">Log In
             </button>
             <br>
             <br>
@@ -36,8 +55,8 @@
             <!--possible we will need this to be on a separate form? Or outside the form?-->
             <p>Don't have an account?</p>
 
-            <!--Need to link button to signup.html page-->
-            <button class="btn waves-effect waves-light" type="submit" id="btnSignUp" name="action" formaction="signup.html">Sign Up
+            <!--SignUp button-->
+            <button class="btn waves-effect waves-light indigo" type="submit" id= "btnSignUp" formaction="signup.html" name="action">Sign Up
             </button>
             
             
