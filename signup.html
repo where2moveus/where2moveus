@@ -6,34 +6,34 @@
     <link rel="stylesheet" type="text/css" href="assets/css/hpstyle.css">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
-
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
-
+    
     <title>Sign Up!</title>
 </head>
-
 <body>
 
         <h1>Create Your Account</h1>
     <div class=createAccount>
             <form>
                     <!--Needs CSS Styling - This is just the skeleton to get started-->
-                    <input type="text" name="email" value="Email Address">
+                    <input type="text" name="email" value="Email Address" id="signUpEmail">
                     <br>
-                    <input type="text"name="userName" value="User Name">
-                    <input type="text" name="passWord" value="Password">
+                    <input type="text" name="passWord" value="Password" id="signUpPW">
                     <br>
-                    <input type="text"name="verifyPW" value="Verify Your Password">
+                    <input type="text" name="verifyPW" value="Verify Your Password" id="verifyPW">
 
-                    <button class="btn waves-effect waves-light" type="submit" id="submit" name="action" formaction="index.html">Submit
+                    <button class="btn waves-effect waves-light" type="submit" id="submit" name="action" formaction="#" id="btnSubmit">Submit
                     </button>
-
-
+            </form>
     </div>
 
 
