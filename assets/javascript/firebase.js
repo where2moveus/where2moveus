@@ -10,6 +10,7 @@ var config = {
 
   firebase.initializeApp(config);
 
+//On click of "Submit", email and pass are used to signup
   document.getElementById("btnSubmit").addEventListener('click', e=>{
     const email = document.getElementById("signUpEmail").value;
     const pass = document.getElementById("signUpPW").value;
@@ -19,6 +20,7 @@ var config = {
   })
 
 
+//This chunk of code stores the email and password to the database
 
 // Variable to reference the database.
     var database = firebase.database();
