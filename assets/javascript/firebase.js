@@ -9,30 +9,16 @@ var config = {
   };
 
   firebase.initializeApp(config);
-//FAIL 1
 
-  // document.getElementById("btnSubmit").addEventListener('click', e=>{
-  //   const email = document.getElementById("signUpEmail").value;
-  //   const pass = document.getElementById("signUpPW").value;
-  //   firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
-  //    console.log(error.message);
-  //   });
-  // })
+  document.getElementById("btnSubmit").addEventListener('click', e=>{
+    const email = document.getElementById("signUpEmail").value;
+    const pass = document.getElementById("signUpPW").value;
+    firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
+     console.log(error.message);
+    });
+  })
 
-//FAIL 2
 
-  // function handleSignUp() {
-  //   var email = document.getElementById('signUpEmail').value;
-  //   var password = document.getElementById('signUpPW').value;
-  //   if (email.length < 4) {
-  //     alert('Please enter an email address.');
-  //     return;
-  //   }
-  //   if (password.length < 4) {
-  //     alert('Please enter a password.');
-  //     return;
-  //   };
-    
 
 // Variable to reference the database.
     var database = firebase.database();
