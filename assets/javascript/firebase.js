@@ -2,12 +2,37 @@
 var config = {
     apiKey: "AIzaSyCbuen40mzg1wt7QZcqfLrvWp9MqdJ4fS8",
     authDomain: "where2moveus-6351e.firebaseapp.com",
-    databaseURL: "https://where2moveus-6351e.firebaseio.com",
+    databaseURL: "https://where2moveus-6351e.firebaseio.com/",
     projectId: "where2moveus-6351e",
     storageBucket: "where2moveus-6351e.appspot.com",
     messagingSenderId: "778203043172"
   };
+
   firebase.initializeApp(config);
+//FAIL 1
+
+  // document.getElementById("btnSubmit").addEventListener('click', e=>{
+  //   const email = document.getElementById("signUpEmail").value;
+  //   const pass = document.getElementById("signUpPW").value;
+  //   firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
+  //    console.log(error.message);
+  //   });
+  // })
+
+//FAIL 2
+
+  // function handleSignUp() {
+  //   var email = document.getElementById('signUpEmail').value;
+  //   var password = document.getElementById('signUpPW').value;
+  //   if (email.length < 4) {
+  //     alert('Please enter an email address.');
+  //     return;
+  //   }
+  //   if (password.length < 4) {
+  //     alert('Please enter a password.');
+  //     return;
+  //   };
+    
 
 // Variable to reference the database.
     var database = firebase.database();
@@ -34,4 +59,3 @@ var config = {
     });
 
 });
-
