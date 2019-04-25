@@ -1,37 +1,32 @@
-var locations = [ ];
-var fields
+var locations = [];
 
-function makeButton(str) {
-  return `<button class="place">${str}</button>`;
+function makeCard() {
+  $("#card").append(`<div class="card">`);
 }
 
-// Function for displaying movie data
-function renderButtons() {
-  $("#buttons-view").html(states.map(makeButton));
-  // Delete the content inside the buttons-view div prior to adding new movies
-  // (this is necessary otherwise you will have repeat buttons)
+function renderCard() {
+  $("#cards-view").html(locations.map(makeCard));
 
-  // Loop through the array of movies, then generate buttons for each movie in the array
 }
 
-// This function handles events where the add movie button is clicked
 $("#add-place").on("click", function(event) {
-  // event.preventDefault() prevents submit button from trying to send a form.
-  // Using a submit button instead of a regular button allows the user to hit
-  // "Enter" instead of clicking the button if desired
   event.preventDefault();
-  var state = $("#place-input").val();
-  states.push(state);
+  var location = $("#place-input").val();
+  location.push(locations);
 
-  // Write code to grab the text the user types into the input field
-  // Write code to add the new movie into the movies array
-
-  // The renderButtons function is called, rendering the list of movie buttons
-  renderButtons();
+  renderCard();
 });
 
-// Calling the renderButtons function to display the initial list of movies
-renderButtons();
+renderCard();
+
+function split() {
+  var split = locations.split(",");
+  console.log(split[1]);
+  var city = split[0];
+  console.log(city);
+  var state = split[1];
+  console.log(state);
+}
 
 $(document).on("click", ".place", function() {
   var state = $(this).text();
