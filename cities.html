@@ -17,22 +17,40 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <!-- this allows use of icons (using it on cards)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>Find Your City!</title>
   </head>
 
-  <body>
+  <body class="center-align">
+
+    <!-- this is the nav bar -->
+    <nav class="indigo">
+        <nav>
+            <div class="nav-wrapper indigo">
+              <a href="#" class="brand-logo"></a>
+              <img src="./assets/css/logo.jpg" class="brand-logo"></img>
+              <ul id="nav-mobile" class="left hide-on-med-and-down center-align">
+              </ul>
+            </div>
+        </nav>
+    </nav>
+
     <h1>Cities You Love!</h1>
 
+    
     <div class="card">
       <div class="card-image waves-effect waves-block waves-light">
         <!--<img class="activator" src="images/office.jpg">-->
       </div>
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"
-          >Card Title<i class="material-icons right">more_vert</i></span
+        <span class="card-title activator grey-text text-darken-4 center-align"
+          >Card Title (City Name)<i class="material-icons right">add</i></span
         >
         <p><a href="#">This is a link</a></p>
       </div>
+      <!-- this is revealed once the user clicks on the city -->
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4"
           >Card Title<i class="material-icons right">close</i></span
@@ -44,6 +62,7 @@
       </div>
     </div>
     <!--Zillow Widget starts here; there is inline styling in it-->
+    <div class="center-align"></div>
     <div
       id="zillow-large-search-box-widget-container"
       style="width:432px;overflow:hidden;background-color:#e7f1fd;color:#555; font: normal normal normal 13px verdana,arial,sans-serif;line-height:13px;margin:0 auto;padding:0;text-align:center;border:1px solid #adcfff;letter-spacing:0;text-transform:none;"
