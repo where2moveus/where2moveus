@@ -1,5 +1,6 @@
 var locations = [];
-var cardDiv = `<div class="card"> \
+  function makeCard() {
+  return `<div class="card"> \
   <div class="card-image waves-effect waves-block waves-light"> </div> \
   <div class="card-content"> \
     <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span> \
@@ -9,33 +10,32 @@ var cardDiv = `<div class="card"> \
     <p>Here is some more information about this product that is onlyrevealed once clicked on.</p>\
     </div>\
     </div>\
-    </div>`;
+    </div>`;}
 
-//function renderCard() {
- // $("#cards-view").html(locations.map(makeCard));
-
-function makeCard() {
-  $("#card").append(cardDiv);
+function renderCard() {
+  $("#cards-view").html(locations.map(makeCard));
 }
 
 $("#add-place").on("click", function(event) {
   event.preventDefault();
   var location = $("#location-input").val();
-  location.push(locations);
+  locations.push(location);
+ 
+  renderCard();
+  //$("#card").append(cardDiv);
 
-  makeCard();
-});
+  }); 
 
-makeCard();
+renderCard();
 
-function split() {
-  var split = locations.split(",");
-  console.log(split[1]);
-  var city = split[0];
-  console.log(city);
-  var state = split[1];
-  console.log(state);
-}
+// function split() {
+//   var split = locations.split(",");
+//   console.log(split[1]);
+//   var city = split[0];
+//   console.log(city);
+//   var state = split[1];
+//   console.log(state);
+// }
 
 $(document).on("click", ".place", function() {
   var state = $(this).text();
