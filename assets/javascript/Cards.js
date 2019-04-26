@@ -1,7 +1,7 @@
 var locations = [];
 
 function makeCard() {
-  //return is the card div
+  //return is the card div 
   return `<div class="card"> \
   <div class="card-image waves-effect waves-block waves-light"> </div> \
   <div class="card-content"> \
@@ -23,9 +23,10 @@ $("#add-place").on("click", function(event) {
   event.preventDefault();
   var location = $("#location-input").val();
   locations.push(location);
-  //ln 27 is the first attempt to
+  //ln 27 is the first attempt to 
   //$("#cardTitle").html(location);
   renderCard();
+
 });
 
 renderCard();
