@@ -22,13 +22,24 @@
 
   <body>
     <h1>Cities You Love!</h1>
+    <!--Form is added to allow user to add a city-->
+    <form id="location-form">
+      <!--typed city, ST because most of the APIs require ST (ex. TX) to pull the data-->
+      <label for="location-input">Add City, ST</label>
+      <input type="text" id="location-input" />
+      <!-- Button triggers new City to be added -->
+      <input id="add-place" type="submit" value="Add a city you love!" />
+    </form>
 
-    <div class="card">
+    <!--added ids to some of the divs to add text from the input and did not add any ids for the APIs-->
+    <div class="card" id="cards-view">
       <div class="card-image waves-effect waves-block waves-light">
         <!--<img class="activator" src="images/office.jpg">-->
       </div>
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"
+        <span
+          class="card-title activator grey-text text-darken-4"
+          id="cardTitle"
           >Card Title<i class="material-icons right">more_vert</i></span
         >
         <p><a href="#">This is a link</a></p>
@@ -39,7 +50,7 @@
         >
         <p>
           Here is some more information about this product that is only revealed
-          once clicked on.<br />
+          once clicked on.
         </p>
       </div>
     </div>
@@ -140,5 +151,9 @@
     </div>
 
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script
+      type="text/javascript"
+      src="assets/javascript/cards.js"
+    ></script>
   </body>
 </html>
