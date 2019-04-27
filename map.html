@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map Locator</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDe2XxjQCNjmJo6W8y6tMsV_XI3YBQgRMo">
+    </script>
+    
+   
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      var infoWindow;
+
+      var request;
+      var service;
+      var markers = [];
+  
+
+  //Rendering Google maps here when the page loads up
+      function initialize() {
+        var center= new google.maps.LatLng(30.2859573, -97.7404374) // coordinates of UT
+        
+        map = new google.maps.map(document.getElementById('map')), {
+          center: center, //make our lat and lng the center of our map which in this case is UT
+          zoom: 13
+        };
+// putting a 5 mile radius request. So when user clicks a certain area it'll show the nearest restaurants (will change this to events soon, just testing with restaurants) in a 5 mile radius.
+         request = {
+            location: center,
+            radius: 8047,
+            types:['restaurants']
+         };
+         // this will render the name of the restaurants that pop up in the map when the user clicks the marker. 
+         infoWindow = new google.maps.infoWindow();
+
+         service= new google.maps.places.PlacesService(map);
+
+         service.nearbySearch(request, callback);
+
+
+         //Now the user can right click anywhere on the map to find restaurants near that specific part that they click. 
+         google.maps.event.addListener(map, 'rightclick', function(event){
+             map.setCenter(event.latLng)
+             clearResults(markers)
+
+        var request= {
+            locations: event.latLng,
+            radius: 8047,
+            types:['restaurants']
+        };
+        service.nearbySearch(request, callback);
+
+         })
+        }
+        //Creating a results array using the the service variable above. This will then render markers on the map of the restaurants nearby. 
+        function callback(results, status) {
+            if(status == google.maps.places.PlacesServiceStatus.OK){
+                for (var i= 0; i < results.length; i++) {
+                   markers.push(createMarker(results[i]));
+                }
+            }
+        }
+        //Create markers
+        function createMarker(place) {
+            var placeLoc= place.geometry.location;
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function(){
+                infoWindow.setContent(place.name);
+                infoWindow.open(map, this);
+            });
+            return marker;
+        }
+
+        //Clear markers 
+        function clearResults(markers) {
+            for (var m in markers) {
+                markers [m].setMap(null)
+            }
+            markers = []
+          }
+
+    //wait for actions which is load the page and the call the initialize function above which will render the map. Some reason not working. 
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+   
+
+    <style>
+        
+        html, body, #map {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+
+  </body>
+</html>
