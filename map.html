@@ -40,6 +40,8 @@
 
          service.nearbySearch(request, callback);
 
+
+         //Now the user can right click anywhere on the map to find restaurants near that specific part that they click. 
          google.maps.event.addListener(map, 'rightclick', function(event){
              map.setCenter(event.latLng)
              clearResults(markers)
