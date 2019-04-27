@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map Locator</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDe2XxjQCNjmJo6W8y6tMsV_XI3YBQgRMo"
+    async defer></script>
+   
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      var infoWindow;
+
+      var request;
+      var service;
+      var markers = [];
+
+      function initialize() {
+        var center= new google.maps.LatLng(30.2859573, -97.7404374)
+        
+        map = new google.maps.map(document.getElementById('map'), {
+          center: center,
+          zoom: 13
+        });
+
+         request = {
+            location: center,
+            radius: 8047,
+            types:['restaurants']
+         };
+
+         infoWindow = new google.maps.infoWindow();
+
+         service= new google.maps.places.PlacesService(map);
+
+         service.nearbySearch(request, callback);
+
+         google.maps.event.addListener(map, 'rightclick', function(event){
+             map.setCenter(event.latLng)
+             clearResults(markers)
+
+        var request= {
+            locations: event.latLng,
+            radius: 8047,
+            types:['restaurants']
+        };
+        service.nearbySearch(request, callback);
+
+         })
+        }
+
+        function callback(results, status) {
+            if(status == google.maps.places.PlacesServiceStatus.OK){
+                for (var i= 0; i < results.length; i++) {
+                   markers.push(createMarker(results[i]));
+                }
+            }
+        }
+        
+        function createMarker(place) {
+            var placeLoc= place.geometry.location;
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function(){
+                infoWindow.setContent(place.name);
+                infoWindow.open(map, this);
+            });
+            return marker;
+        }
+
+        function clearResults(markers) {
+            for (var m in markers) {
+                markers [m].setMap(null)
+            }
+            markers = []
+          }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+   
+
+    <style>
+        
+        html, body, #map {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+
+  </body>
+</html>
