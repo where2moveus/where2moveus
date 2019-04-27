@@ -26,6 +26,7 @@ Check out our [Project Board!!](https://github.com/where2moveus/where2moveus/pro
 
 ## APIs to be Used: 
 * GoogleMap API - Display map and pinpoint locations
-* Indeed API - Job search to show potential jobs within location
-* Zillow API - Display regional data
+* Indeed API - Job search to show potential jobs within location and rate job prospects from A to F rating
+* Zillow API - Display regional data with A to F ratings
+* SchoolDigger API - Display regional schools and show a 1-10 rating of education level
 
