@@ -1,0 +1,13 @@
+.logIn {
+    width: 50%;
+    display: inline-block;
+}
+
+nav .brand-logo { 
+    height: 64px; 
+    }
+
+    .city-images {
+        height: 300px;
+        align-self: auto;
+    }

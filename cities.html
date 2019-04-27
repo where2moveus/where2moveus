@@ -17,35 +17,57 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <!-- this allows use of icons (using it on cards)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>Find Your City!</title>
   </head>
 
-  <body>
+  <body class="center-align">
+        <!-- this is the nav bar -->
+        <nav class="indigo">
+            <nav>
+                <div class="nav-wrapper indigo">
+                  <a href="#" class="brand-logo"></a>
+                  <img src="./assets/images/logo.jpg" class="brand-logo"></img>
+                  <ul id="nav-mobile" class="left hide-on-med-and-down center-align">
+                  </ul>
+                </div>
+            </nav>
+        </nav>
+        
     <h1>Where2MoveUS</h1>
     <!--Form is added to allow user to add a city-->
+  <div class="tempSearchBar center-align">
     <form id="location-form">
       <!--typed city, ST because most of the APIs require ST (ex. TX) to pull the data-->
       <label for="location-input">Add City, ST</label>
-      <input type="text" id="location-input" />
+      <input type="text" id="location-input" placeholder="Search.." name="search"/>
       <!-- Button triggers new City to be added -->
-      <input id="add-place" type="submit" value="Add a city you love!" />
+      <button class="btn waves-effect waves-light indigo" type="submit" id="add-place">Add a city you love!"</button>
     </form>
+  </div>
 
     <!--added ids to some of the divs to add text from the input and did not add any ids for the APIs-->
     <div class="card" id="cards-view">
       <div class="card-image waves-effect waves-block waves-light">
-        <p id="cardText"></p>
+        <p id="cardText"></p>        
+    <img class="activator" src="images/office.jpg">
       </div>
-      <!--<img class="activator" src="images/office.jpg">-->
 
       <div class="card-content">
-        <span
-          class="card-title activator grey-text text-darken-4"
-          id="cardTitle"
-          ><i class="material-icons right"></i
-        ></span>
-        <p><a href="#"></a></p>
+
+        <span class="card-title activator grey-text text-darken-4 center-align" id="cardTitle">Card Title (City Name)<i class="material-icons right">add</i>
+        </span>
+        <p><a href="#">This will be a link</a></p>
+
+        <span class="card-title activator grey-text text-darken-4 center-align"
+          >Card Title (City Name)<i class="material-icons right">add</i></span>
+        
+          <!--  -->
+        <p><a href="#">This is a link</a></p>
       </div>
+      <!-- this is revealed once the user clicks on the city -->
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4"
           ><i class="material-icons right"></i
@@ -55,6 +77,7 @@
     </div>
 
     <!--Zillow Widget starts here; there is inline styling in it-->
+    
     <div
       id="zillow-large-search-box-widget-container"
       style="width:432px;overflow:hidden;background-color:#e7f1fd;color:#555; font: normal normal normal 13px verdana,arial,sans-serif;line-height:13px;margin:0 auto;padding:0;text-align:center;border:1px solid #adcfff;letter-spacing:0;text-transform:none;"
