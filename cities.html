@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <h1>Cities You Love!</h1>
+    <h1>Where2MoveUS</h1>
     <!--Form is added to allow user to add a city-->
     <form id="location-form">
       <!--typed city, ST because most of the APIs require ST (ex. TX) to pull the data-->
@@ -34,26 +34,26 @@
     <!--added ids to some of the divs to add text from the input and did not add any ids for the APIs-->
     <div class="card" id="cards-view">
       <div class="card-image waves-effect waves-block waves-light">
-        <!--<img class="activator" src="images/office.jpg">-->
+        <p id="cardText"></p>
       </div>
+      <!--<img class="activator" src="images/office.jpg">-->
+
       <div class="card-content">
         <span
           class="card-title activator grey-text text-darken-4"
           id="cardTitle"
-          >Card Title<i class="material-icons right">more_vert</i></span
-        >
-        <p><a href="#">This is a link</a></p>
+          ><i class="material-icons right"></i
+        ></span>
+        <p><a href="#"></a></p>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4"
-          >Card Title<i class="material-icons right">close</i></span
-        >
-        <p>
-          Here is some more information about this product that is only revealed
-          once clicked on.
-        </p>
+          ><i class="material-icons right"></i
+        ></span>
+        <p></p>
       </div>
     </div>
+
     <!--Zillow Widget starts here; there is inline styling in it-->
     <div
       id="zillow-large-search-box-widget-container"
@@ -151,9 +151,6 @@
     </div>
 
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <script
-      type="text/javascript"
-      src="assets/javascript/cards.js"
-    ></script>
+    <script type="text/javascript" src="assets/javascript/cards.js"></script>
   </body>
 </html>
