@@ -14,7 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvvwmXICbkoU9Y3Bq5BLyeMGaaqnNnYAI&libraries=geometry">
+    </script>
             
 
     <title>Find Your City!</title>
@@ -23,11 +24,20 @@
 <body>
         <h1>Cities You Love!</h1>
 
+        <!--This search bar can be deleted.  It's just so I can test javascript-->
+        <div class="tempSearchBar">
+          <form>
+            <input type="text" id="searchFor" placeholder="Search.." name="search">
+            <button type="submit" id="csSubmit">Submit</button>
+          </form>
+        </div>
+        
+
         <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
                   <!--<img class="activator" src="images/office.jpg">-->
                 </div>
-                <div class="card-content">
+                <div class="card-content" id="cityCards"> 
                   <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
                   <p><a href="#">This is a link</a></p>
                 </div>
